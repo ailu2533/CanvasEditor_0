@@ -1,0 +1,78 @@
+{
+  "originHash" : "c256fb53fe660077769a44263d1abed0c6ab17ba9c5b6041761699312c3ce1f4",
+  "pins" : [
+    {
+      "identity" : "datehelper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/melvitax/DateHelper",
+      "state" : {
+        "revision" : "76d0840daab7288fc99b04a4c23d504f0394e083",
+        "version" : "5.0.1"
+      }
+    },
+    {
+      "identity" : "horizoncalendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/HorizonCalendar",
+      "state" : {
+        "revision" : "a360d71a1255f0b24e378f2ee31a7a7d674a49b6",
+        "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "horizontalpicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ailu2533/HorizontalPicker.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6f9bc07bbf2d3c8b791f30e5961ccc8183ca612c"
+      }
+    },
+    {
+      "identity" : "lemondateutils",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ailu2533/LemonDateUtils.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "65d01211bd8113e63beee39590839824582db69e"
+      }
+    },
+    {
+      "identity" : "lemonutils",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ailu2533/LemonUtils.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "89162da89ef9e9070137c486e829d30affe70ab5"
+      }
+    },
+    {
+      "identity" : "swift-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-collections.git",
+      "state" : {
+        "revision" : "3d2dc41a01f9e49d84f0a3925fb858bed64f702d",
+        "version" : "1.1.2"
+      }
+    },
+    {
+      "identity" : "swiftlintplugins",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SimplyDanny/SwiftLintPlugins",
+      "state" : {
+        "revision" : "b8431a26655378581890d56b95a0b59aba9f62da",
+        "version" : "0.55.1"
+      }
+    },
+    {
+      "identity" : "swiftmovable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ailu2533/SwiftMovable.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "fd4eb871a9fe5de2a722569f82f76a870fc13555"
+      }
+    }
+  ],
+  "version" : 3
+}

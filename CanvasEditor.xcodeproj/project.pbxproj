@@ -3,8 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
+
+/* Begin PBXBuildFile section */
+		27ECB53F2C48B7C400DE81E2 /* LemonUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 27ECB53E2C48B7C400DE81E2 /* LemonUtils */; };
+		27ECB5452C48BF2400DE81E2 /* HorizontalPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 27ECB5442C48BF2400DE81E2 /* HorizontalPicker */; };
+		27ECB5592C48DFC600DE81E2 /* SwiftMovable in Frameworks */ = {isa = PBXBuildFile; productRef = 27ECB5582C48DFC600DE81E2 /* SwiftMovable */; };
+		27ECB57A2C48E04900DE81E2 /* SwiftMovable in Frameworks */ = {isa = PBXBuildFile; productRef = 27ECB5792C48E04900DE81E2 /* SwiftMovable */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		27ECB5092C489D0300DE81E2 /* PBXContainerItemProxy */ = {
@@ -40,6 +47,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27ECB5592C48DFC600DE81E2 /* SwiftMovable in Frameworks */,
+				27ECB5452C48BF2400DE81E2 /* HorizontalPicker in Frameworks */,
+				27ECB53F2C48B7C400DE81E2 /* LemonUtils in Frameworks */,
+				27ECB57A2C48E04900DE81E2 /* SwiftMovable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +111,10 @@
 			);
 			name = CanvasEditor;
 			packageProductDependencies = (
+				27ECB53E2C48B7C400DE81E2 /* LemonUtils */,
+				27ECB5442C48BF2400DE81E2 /* HorizontalPicker */,
+				27ECB5582C48DFC600DE81E2 /* SwiftMovable */,
+				27ECB5792C48E04900DE81E2 /* SwiftMovable */,
 			);
 			productName = CanvasEditor;
 			productReference = 27ECB4F82C489D0100DE81E2 /* CanvasEditor.app */;
@@ -183,6 +198,11 @@
 				Base,
 			);
 			mainGroup = 27ECB4EF2C489D0100DE81E2;
+			packageReferences = (
+				27ECB53D2C48B7C400DE81E2 /* XCRemoteSwiftPackageReference "LemonUtils" */,
+				27ECB5432C48BF2400DE81E2 /* XCRemoteSwiftPackageReference "HorizontalPicker" */,
+				27ECB5782C48E04900DE81E2 /* XCRemoteSwiftPackageReference "SwiftMovable" */,
+			);
 			productRefGroup = 27ECB4F92C489D0100DE81E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -391,6 +411,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,6 +441,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,6 +567,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		27ECB53D2C48B7C400DE81E2 /* XCRemoteSwiftPackageReference "LemonUtils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ailu2533/LemonUtils.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		27ECB5432C48BF2400DE81E2 /* XCRemoteSwiftPackageReference "HorizontalPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ailu2533/HorizontalPicker.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		27ECB5782C48E04900DE81E2 /* XCRemoteSwiftPackageReference "SwiftMovable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ailu2533/SwiftMovable.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		27ECB53E2C48B7C400DE81E2 /* LemonUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27ECB53D2C48B7C400DE81E2 /* XCRemoteSwiftPackageReference "LemonUtils" */;
+			productName = LemonUtils;
+		};
+		27ECB5442C48BF2400DE81E2 /* HorizontalPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27ECB5432C48BF2400DE81E2 /* XCRemoteSwiftPackageReference "HorizontalPicker" */;
+			productName = HorizontalPicker;
+		};
+		27ECB5582C48DFC600DE81E2 /* SwiftMovable */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftMovable;
+		};
+		27ECB5792C48E04900DE81E2 /* SwiftMovable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27ECB5782C48E04900DE81E2 /* XCRemoteSwiftPackageReference "SwiftMovable" */;
+			productName = SwiftMovable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 27ECB4F02C489D0100DE81E2 /* Project object */;
 }
