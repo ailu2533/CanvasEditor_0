@@ -21,7 +21,7 @@ enum ControlKind: Int, CaseIterable {
         case .item:
             return "tshirt"
         case .sticker:
-            return "cat"
+            return "tag"
         case .text:
             return "textformat"
         }
@@ -56,17 +56,6 @@ struct ContentView: View {
 
     @State private var movablesViewModel = MovablesViewModel()
 
-    func getSize(size: CGSize) -> CGSize {
-        let width = size.width
-        let height = size.height
-
-        if height * ratio > width {
-            return .init(width: size.width, height: size.width / ratio)
-        } else {
-            return .init(width: height * ratio, height: height)
-        }
-    }
-
     @State private var bottomHeight: CGFloat = 100
 
     @State private var showFullScreen = false
@@ -75,7 +64,8 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 16) {
-                contentArea
+                CardView(backgroundViewModel: backgroundViewModel, movablesViewModel: movablesViewModel, selection: $selection)
+                Spacer()
                 controlPanel.transition(.move(edge: .bottom))
             }
             .environment(\.dismissPicker, {
@@ -116,41 +106,6 @@ struct ContentView: View {
     }
 
     @State private var selection: UUID?
-
-    // Configuration for movable objects (stickers, texts, event info)
-    let stickerConfig = MovableObjectViewConfig(
-//            parentSize: .init(width: width, height: height),
-        enable: true,
-        deleteCallback: { _ in
-//                outfitBuilder.delete(movable)
-        },
-        editCallback: { _ in
-//                outfitBuilder.editOutfit = movable
-        }
-    )
-
-    var contentArea: some View {
-        GeometryReader { proxy in
-            let size = getSize(size: proxy.size)
-            backgroundViewModel.backgroundView()
-                .frame(width: size.width, height: size.height)
-                .position(x: proxy.size.width / 2, y: size.height / 2)
-                .overlay {
-                    ForEach(movablesViewModel.images) { movbleImage in
-
-                        MovableObjectView(item: movbleImage, selection: $selection, config: stickerConfig) { _ in
-//                            Image(uiImage: item.image)
-                            Image(systemName: "cat")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                        }
-                    }
-                }
-        }
-
-        .padding(.horizontal, 16)
-        .padding(.top, 16)
-    }
 
     var controlPanel: some View {
         Group {
@@ -193,7 +148,7 @@ struct ContentView: View {
             }
         }
         .padding(.top, 8)
-        .frame(height: 300)
+        .frame(height: 250)
     }
 
     var bottom: some View {
@@ -202,7 +157,7 @@ struct ContentView: View {
                 controlButton(for: kind)
             }
         }
-        .padding(.vertical, 20)
+        .padding(.vertical, 10)
         .background(.lightCyan)
     }
 
@@ -229,4 +184,52 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+
+struct CardView: View {
+    var backgroundViewModel: BackgroundViewModel
+    var movablesViewModel: MovablesViewModel
+    @Binding var selection: UUID?
+
+    var body: some View {
+        GeometryReader { proxy in
+            let size = getSize(size: proxy.size)
+            backgroundViewModel.backgroundView()
+
+                .overlay {
+                    ForEach(movablesViewModel.images) { movbleImage in
+
+                        MovableObjectView(item: movbleImage, selection: $selection, config: stickerConfig) { _ in
+                            Image(systemName: "cat")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        }
+                    }
+                }
+                .frame(width: size.width, height: size.height)
+                .position(x: proxy.size.width / 2, y: size.height / 2)
+        }
+    }
+
+    let ratio: CGFloat = 2.0 / 3.0
+
+    func getSize(size: CGSize) -> CGSize {
+        let width = size.width
+        let height = size.height
+
+        if height * ratio > width {
+            return .init(width: size.width, height: size.width / ratio)
+        } else {
+            return .init(width: height * ratio, height: height)
+        }
+    }
+
+    let stickerConfig = MovableObjectViewConfig(
+        enable: true,
+        deleteCallback: { _ in
+        },
+        editCallback: { _ in
+        }
+    )
 }
